@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+
+  background: #cac2c2;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 60px;
+  
+}
+
+.task-box {
+  width: 850px;
+
+  background: white;
+
+  border: 1px solid #dcdcdc;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow: 8px 6px 26px 24px rgba(0,0,0,0.1);
+  
+}
+
+
+.task-input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding: 22px;
+
+  font-size: 20px;
+
+  color: #222;
+
+  border-bottom: 1px solid #ececec;
+}
+
+.task-input::placeholder {
+  color: #999;
+}
+
+textarea {
+  width: 100%;
+
+  min-height: 100px;
+
+  border: none;
+
+  outline: none;
+
+  resize: none;
+
+  padding: 20px;
+
+  font-size: 15px;
+
+  color: #444;
+}
+
+textarea::placeholder {
+  color: #999;
+}
+
+.options {
+  width: 100%;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  padding: 0 20px 20px;
+}
+
+.options button {
+  height: 40px;
+
+  border: 1px solid #d8d8d8;
+
+  background: white;
+
+  border-radius: 10px;
+
+  padding: 0 16px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+
+  color: #444;
+
+  transition: 0.2s;
+}
+
+.options button:hover {
+  background: #f5f5f5;
+}
+
+.options i {
+  font-size: 15px;
+}
+
+.footer {
+  width: 100%;
+
+  border-top: 1px solid #ececec;
+
+  padding: 18px 20px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 12px;
+}
+
+.cancelar {
+  width: 120px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #f3f3f3;
+
+  color: #444;
+
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+.adicionar {
+  width: 180px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #ea9d97;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.adicionar:hover {
+  background: #df8d86;
+}

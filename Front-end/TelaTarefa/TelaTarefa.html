@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Cadastro de Tarefas</title>
+
+  <!-- Ícones -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="telaTarefa.css" />
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="task-box">
+
+      <!-- INPUT PRINCIPAL -->
+        <input
+         type="text"
+        class="task-input"
+        placeholder="Digite o título da tarefa"
+        />
+
+      <!-- DESCRIÇÃO -->
+      <textarea
+        placeholder="Digite a tarefa"
+      ></textarea>
+
+      <!-- OPÇÕES -->
+      <div class="options">
+
+        <button>
+          <i class="fa-solid fa-tag"></i>
+          TAG
+        </button>
+
+        <button>
+          <i class="fa-solid fa-flag"></i>
+          Prioridade
+        </button>
+
+        <button>
+          <i class="fa-regular fa-calendar"></i>
+          Data
+        </button>
+
+        <button>
+          <i class="fa-regular fa-clock"></i>
+          Horário
+        </button>
+
+        <button>
+          <i class="fa-solid fa-repeat"></i>
+          Recorrente
+        </button>
+
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer">
+
+        <button class="cancelar">
+          Cancelar
+        </button>
+
+        <button class="adicionar">
+          Adicionar tarefa
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

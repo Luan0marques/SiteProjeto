@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: #f4f6fb;
+}
+
+/* CONTAINER */
+.register-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* LADO ESQUERDO */
+.register-left {
+  flex: 1;
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+
+.register-left .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.register-left i {
+  font-size: 26px;
+}
+
+.register-left h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.register-left p {
+  color: rgba(255,255,255,0.8);
+  max-width: 400px;
+}
+
+/* LADO DIREITO */
+.register-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BOX */
+.register-box {
+  width: 380px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.register-box h2 {
+  margin-bottom: 5px;
+}
+
+.register-box p {
+  margin-bottom: 20px;
+  color: #6b7280;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #7c3aed;
+}
+
+.fraca {
+  border-color: red;
+}
+
+.media {
+  border-color: yellow;
+}
+
+.forte {
+  border-color: green;
+}
+
+/* BOTÃO */
+button {
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #5b21b6;
+}
+
+/* LINK */
+.extra {
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.extra a {
+  color: #7c3aed;
+  text-decoration: none;
+}
+
+.extra a:hover {
+  text-decoration: underline;
+}

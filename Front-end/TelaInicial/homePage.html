@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>FocusTask Dashboard</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    
+  />
+<link rel="stylesheet" href="style3.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="homePage.css" />
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+      <div class="logo">
+        <i class="fa-solid fa-circle-check"></i>
+        <h2>FocusTask</h2>
+      </div>
+
+      <nav class="menu">
+
+        <button class="active">
+          <i class="fa-solid fa-house"></i>
+          Dashboard
+        </button>
+
+        <button>
+          <i class="fa-solid fa-list-check"></i>
+          Tarefas
+        </button>
+
+        <button>
+          <i class="fa-solid fa-calendar"></i>
+          Agenda
+        </button>
+
+        <button>
+          <i class="fa-solid fa-chart-simple"></i>
+          Analytics
+        </button>
+
+        <button>
+          <i class="fa-solid fa-gear"></i>
+          Configurações
+        </button>
+
+      </nav>
+
+      <div class="profile">
+
+        <img
+          src="https://i.pravatar.cc/100"
+          alt=""
+        />
+
+        <div>
+          <h4>Felipe Silva</h4>
+          <p>Ver perfil</p>
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+      <!-- HEADER -->
+
+      <header class="topbar">
+
+        <div>
+          <h1>Bom dia, Felipe! 👋</h1>
+
+          <p>
+            Vamos fazer de hoje um dia incrível!
+          </p>
+        </div>
+
+        <div class="top-icons">
+
+          <button>
+            <i class="fa-solid fa-bell"></i>
+          </button>
+
+          <button>
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+        </div>
+
+      </header>
+
+      <!-- CARDS -->
+
+      <section class="cards">
+
+        <div class="card purple">
+
+          <h3>Progresso de hoje</h3>
+
+          <div class="progress-box">
+
+            <div class="circle">
+              75%
+            </div>
+
+            <div>
+              <h2>6 / 8</h2>
+              <p>Tarefas concluídas</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card dark">
+
+          <h3>Próxima tarefa</h3>
+
+          <h2>Estudar React</h2>
+
+          <p>Hoje às 19:00</p>
+
+          <button class="start-btn">
+            Começar agora
+          </button>
+
+        </div>
+
+        <div class="card green">
+
+          <h3>Sequência atual</h3>
+
+          <h1>7 dias</h1>
+
+          <p>Seguidos</p>
+
+        </div>
+
+      </section>
+
+      <!-- TASKS -->
+
+      <section class="tasks-container">
+
+        <div class="tasks-header">
+
+          <h2>Tarefas de hoje</h2>
+
+          <button class="add-task">
+            + Adicionar tarefa
+          </button>
+
+        </div>
+
+        <!-- TASK -->
+
+        <div class="task-item">
+
+          <div class="task-left">
+
+            <input type="checkbox" />
+
+            <div class="task-icon purple-icon">
+              <i class="fa-solid fa-book"></i>
+            </div>
+
+            <div>
+
+              <h3>Estudar React</h3>
+
+              <p>
+                Estudar hooks e context API
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="task-right">
+
+            <span class="priority alta">
+              Alta
+            </span>
+
+            <span class="time">
+              19:00
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- TASK -->
+
+        <div class="task-item">
+
+          <div class="task-left">
+
+            <input type="checkbox" />
+
+            <div class="task-icon green-icon">
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+
+            <div>
+
+              <h3>Academia</h3>
+
+              <p>
+                Treino de membros superiores
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="task-right">
+
+            <span class="priority media">
+              Média
+            </span>
+
+            <span class="time">
+              07:30
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- TASK -->
+
+        <div class="task-item">
+
+          <div class="task-left">
+
+            <input type="checkbox" checked />
+
+            <div class="task-icon blue-icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+
+            <div>
+
+              <h3>Trabalho</h3>
+
+              <p>
+                Reunião com a equipe
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="task-right">
+
+            <span class="priority baixa">
+              Baixa
+            </span>
+
+            <span class="time">
+              10:00
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

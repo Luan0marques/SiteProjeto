@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>FocusTask - Login</title>
+
+  <link rel="stylesheet" href="login.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="login-container">
+
+    <!-- LADO ESQUERDO (branding) -->
+    <div class="login-left">
+      <div class="logo">
+        <i class="fa-solid fa-circle-check"></i>
+        <h1>FocusTask</h1>
+      </div>
+
+      <h2>Organize suas tarefas com foco e produtividade</h2>
+
+      <p>
+        Controle seu dia, acompanhe seu progresso e alcance seus objetivos.
+      </p>
+    </div>
+
+    <!-- LADO DIREITO (form) -->
+    <div class="login-right">
+
+      <div class="login-box">
+
+        <h2>Entrar</h2>
+        <p>Bem-vindo de volta 👋</p>
+
+        <form>
+
+          <label>Email</label>
+          <input type="email" placeholder="Digite seu email" required />
+
+          <label>Senha</label>
+          <input type="password" placeholder="Digite sua senha" required />
+
+          <button id="login-btn">Entrar</button>
+
+        </form>
+
+        <div class="extra">
+          <a href="#">Esqueci minha senha</a>
+          <a href="#">Criar conta</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="login.js"></script>
+</body>
+</html>
