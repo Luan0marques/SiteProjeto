@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 import { PrismaClient } from '@prisma/client'
 
 
@@ -11,7 +12,7 @@ const PORT = 3000
 app.use(cors())
 app.use(express.json())
 
-
+//USUARIO SE CADASTRA PARA PODER ACESAR
 app.post('/register', async (req, res) => {
 
     const criptoPass = await bcrypt.hash(
@@ -30,6 +31,8 @@ app.post('/register', async (req, res) => {
 
     res.status(201).json(req.body)
 })
+
+//CHECAR DADOS DO USUARIO PARA EFETUAR LOGIN
 
 app.post('/login', async (req, res) => {
 
@@ -58,10 +61,47 @@ app.post('/login', async (req, res) => {
         });
     }
 
+   
+
+    const token = jwt.sign(
+  {
+    userId: user.id
+  },
+  process.env.JWT_SECRET,
+  {
+    expiresIn: '7d'
+  }
+)
+
+res.json({
+  token
+})
+
     res.status(200).json({
-        message: 'Login realizado com sucesso'
+        message: 'Login realizado com sucesso', 
+        token
     });
 });
+
+
+app.get('/me', async (req, res) => {
+
+    const token = localStorage.getItem('token')
+    const response = await api.get
+
+    const user = await prisma.user.findUnique({
+        where: {
+            id: req.userId
+        },
+        select: {
+            id: true,
+            name: true,
+            email: true
+        }
+    })
+
+    res.json(user)
+})
 
 app.get('/register', async (req, res) => {
     
@@ -69,22 +109,6 @@ app.get('/register', async (req, res) => {
     res.status(200).json(users)
 })
 
-app.put('/register/:id', async (req, res) => {
-    
-    await prisma.user.update({
-        where:{
-            id: req.params.id
-        },  
-        data : {
-            email: req.body.email,
-            name: req.body.name,
-            password: req.body.password
-        }
-    })
-
-
-    res.status(201).json(req.body)
-})
 
 app.listen(PORT, () => {
     console.log(`Server runing in http://localhost:${PORT}`)
