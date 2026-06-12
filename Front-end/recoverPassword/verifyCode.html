@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusTask - Verificar Código</title>
+
+  <link rel="stylesheet" href="recoverPassword.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="recover-container">
+
+    <div class="recover-left">
+
+      <div class="logo">
+        <i class="fa-solid fa-circle-check"></i>
+        <h1>FocusTask</h1>
+      </div>
+
+      <h2>Verifique seu email</h2>
+
+      <p>
+        Enviamos um código de confirmação para seu email.
+      </p>
+
+    </div>
+
+    <div class="recover-right">
+
+      <div class="recover-box">
+
+        <h2>Confirmar Código</h2>
+
+        <p id="email-info"></p>
+
+        <form>
+
+          <div class="code-container">
+
+            <input type="text" maxlength="1" class="code-input">
+            <input type="text" maxlength="1" class="code-input">
+            <input type="text" maxlength="1" class="code-input">
+            <input type="text" maxlength="1" class="code-input">
+            <input type="text" maxlength="1" class="code-input">
+            <input type="text" maxlength="1" class="code-input">
+
+          </div>
+
+          <button id="verify-btn">
+            Confirmar Código
+          </button>
+
+        </form>
+
+        <div class="extra">
+
+          <a href="#" id="resend-code">
+            Reenviar código
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="verifyCode.js"></script>
+
+</body>
+</html>

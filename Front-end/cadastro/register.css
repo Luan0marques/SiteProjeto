@@ -57,6 +57,7 @@ body {
   align-items: center;
 }
 
+
 /* BOX */
 .register-box {
   width: 380px;
@@ -128,6 +129,10 @@ button:hover {
   background: #5b21b6;
 }
 
+button:active {
+  transform: scale(1.05);
+}
+
 /* LINK */
 .extra {
   margin-top: 15px;
@@ -142,4 +147,160 @@ button:hover {
 
 .extra a:hover {
   text-decoration: underline;
+}
+
+/* Container dos Toasts */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo Base do Toast */
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #333;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #ccc;
+    min-width: 280px;
+    max-width: 400px;
+    animation: toastIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Variação de Sucesso (Verde) */
+.toast.success {
+    border-left-color: #2ec4b6;
+}
+.toast.success i {
+    color: #2ec4b6;
+    font-size: 18px;
+}
+
+/* Variação de Erro (Vermelho) */
+.toast.error {
+    border-left-color: #e74c3c;
+}
+.toast.error i {
+    color: #e74c3c;
+    font-size: 18px;
+}
+
+/* Animação de Saída */
+.toast.hide {
+    animation: toastOut 0.3s ease forwards;
+}
+
+/* Animações CSS */
+@keyframes toastIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toastOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================================
+   SISTEMA DE TOASTS (POP-UPS MODERNOS)
+   ========================================================== */
+#toast-container {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #1f2937;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #ccc;
+    min-width: 300px;
+    max-width: 420px;
+    animation: toastIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.toast.success {
+    border-left-color: #10b981;
+}
+
+.toast.success i {
+    color: #10b981;
+    font-size: 18px;
+}
+
+.toast.error {
+    border-left-color: #ef4444;
+}
+
+.toast.error i {
+    color: #ef4444;
+    font-size: 18px;
+}
+
+.toast.hide {
+    animation: toastOut 0.3s ease forwards;
+}
+
+@keyframes toastIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toastOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }
