@@ -3,6 +3,7 @@ import cors from 'cors'
 import bcrypt from 'bcrypt'
 import 'dotenv/config'
 import jwt from 'jsonwebtoken'
+import { authMiddleware } from './middlewares/authMiddleware.js';
 import { PrismaClient } from '@prisma/client'
 import { sendRecoveryCode } from './services/mailService.js';
 
@@ -76,7 +77,7 @@ app.post('/login', async (req, res) => {
         });
     }
 
-   
+
 
     const token = jwt.sign(
         {
@@ -86,21 +87,18 @@ app.post('/login', async (req, res) => {
         {
             expiresIn: '7d'
         }
-    )
+    );
 
-        res.json({
-        token
-        })
-
-    res.status(200).json({
-        message: 'Login realizado com sucesso', 
+    return res.status(200).json({
+        message: 'Login realizado com sucesso',
         token
     });
+
 });
 
 
 app.get('/register', async (req, res) => {
-    
+
     const users = await prisma.user.findMany()
     res.status(200).json(users)
 })
@@ -240,6 +238,27 @@ app.post('/reset-password', async (req, res) => {
 });
 
 /*-- FIM Resetar senha --*/
+
+/*-- Verificacao de login home page--*/
+
+app.get(
+    '/me',
+    authMiddleware,
+    async (req, res) => {
+
+        const user = await prisma.user.findUnique({
+            where: {
+                id: req.userId
+            },
+            select: {
+                name: true,
+                email: true
+            }
+        });
+
+        res.json(user);
+    }
+);
 
 
 app.listen(PORT, () => {
