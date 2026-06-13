@@ -17,22 +17,35 @@ app.use(express.json())
 //USUARIO SE CADASTRA PARA PODER ACESAR
 app.post('/register', async (req, res) => {
 
-    const criptoPass = await bcrypt.hash(
-        req.body.password,
-        10
-    )
+    const { name, email, password } = req.body;
 
-    await prisma.user.create({
-        data : {
-            email: req.body.email,
-            name: req.body.name,
-            password: criptoPass
+    const userExists = await prisma.user.findUnique({
+        where: {
+            email
         }
-    })
+    });
 
+    if (userExists) {
+        return res.status(409).json({
+            message: 'Email já cadastrado'
+        });
+    }
 
-    res.status(201).json(req.body)
-})
+    const hashedPassword = await bcrypt.hash(
+        password,
+        10
+    );
+
+    const user = await prisma.user.create({
+        data: {
+            name,
+            email: email.trim().toLowerCase(),
+            password: hashedPassword
+        }
+    });
+
+    res.status(201).json(user);
+});
 
 //CHECAR DADOS DO USUARIO PARA EFETUAR LOGIN
 
@@ -66,18 +79,18 @@ app.post('/login', async (req, res) => {
    
 
     const token = jwt.sign(
-  {
-    userId: user.id
-  },
-  process.env.JWT_SECRET,
-  {
-    expiresIn: '7d'
-  }
-)
+        {
+            userId: user.id
+        },
+        process.env.JWT_SECRET,
+        {
+            expiresIn: '7d'
+        }
+    )
 
-res.json({
-  token
-})
+        res.json({
+        token
+        })
 
     res.status(200).json({
         message: 'Login realizado com sucesso', 
@@ -97,6 +110,8 @@ app.get('/register', async (req, res) => {
 app.post('/recover-password', async (req, res) => {
 
     const { email } = req.body;
+
+    console.log("Email recebido:", email);
 
     const user = await prisma.user.findUnique({
         where: {
