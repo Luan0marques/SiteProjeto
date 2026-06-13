@@ -58,7 +58,7 @@ async function loginUser(event) {
     if (error.response?.status === 404) {
 
         showToast(
-            "Este email não está cadastrado. Crie uma conta primeiro.",
+            "Este email não está cadastrado. Crie uma conta primeiro. Voce sera Redirecionado",
             "error"
         );
 
